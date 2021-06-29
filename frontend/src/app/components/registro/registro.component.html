@@ -1,0 +1,65 @@
+<app-headerhome></app-headerhome>
+
+<div class="container my-5">
+  <div class="row my-5 justify-content-center">
+    <div class="col-7">
+      <h2>Regístrate</h2><br>
+      <form class="row g-3" action="/paciente" name="form" method="POST">
+        <div class="col-12">
+          <label for="inputNombres" class="form-label">Nombres</label>
+          <input type="text" name="nombre" class="form-control" id="inputNombres" required>
+        </div>
+
+        <div class="col-12">
+          <label for="inputApellidos" class="form-label">Apellidos</label>
+          <input type="text" name="apellidos" class="form-control" id="inputApellidos" required>
+        </div>
+
+        <div class="col-12">
+          <label for="inputRut" class="form-label">Rut</label>
+          <input type="text" name="rut" class="form-control" id="inputRut" required>
+        </div>
+
+        <div class="col-12">
+          <label for="inputAddress" class="form-label">Dirección</label>
+          <input type="text" name="direccion" class="form-control" id="inputAddress" required>
+        </div>
+
+        <div class="col-md-6">
+          <label for="inputEmail4" class="form-label">Correo electrónico</label>
+          <input type="email" name="email" class="form-control" id="inputEmail4" required>
+        </div>
+
+        <div class="col-md-6">
+          <label for="inputPassword4" class="form-label">Contraseña</label>
+          <input type="password" name="password" class="form-control" id="inputPassword4" required>
+        </div>
+
+        <div class="col-md-6">
+          <label for="inputRegion" class="form-label">Region</label>
+
+          <select (change)="onChange(selectField.value)" #selectField id="inputRegion" class="form-select" required>
+            <option value="" selected>Seleccione una región</option>
+            <option *ngFor="let region of regiones" [value]="region.idRegion">{{region.nombre}}</option>
+          </select>
+        </div>
+
+        <div class="col-md-6">
+          <label for="inputComuna" class="form-label">Comuna</label>
+
+          <select id="inputComuna" class="form-select" required>
+            <option value="" selected>Seleccione una comuna</option>
+            <option *ngFor="let comuna of comunasFiltradas" [value]="comuna.idComuna">{{comuna.nombre}}</option>
+          </select>
+
+        </div>
+
+        <div class="col-12">
+          <button type="submit" class="btn btn-primary">Crear Cuenta</button>
+        </div>
+
+      </form>
+    </div>
+  </div>    
+</div>
+

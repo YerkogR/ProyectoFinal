@@ -1,0 +1,47 @@
+<app-headeradmin></app-headeradmin>
+
+<div class="container">
+  <div class="row mt-5 mb-5">
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Paciente</th>
+        <th scope="col">Doctor</th>
+        <th scope="col">Fecha</th>
+        <th scope="col">Hora</th>
+        <th scope="col">Descripcion</th>
+        <th scope="col">Estado</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="table-warning">
+        <td>Juan Soto Oyarzo</td>
+        <td>Pedro Quiroz Martinez</td>
+        <td>02/07/2021</td>
+        <td>13:00</td>
+        <td>Dolores frecuentes de cabeza</td>
+        <td [routerLink]="['/editar-citas']" routerLinkActive="router-link-active">abierta</td>
+      </tr>
+      <tr class="table-success">
+       <td>Juan Soto Oyarzo</td>
+       <td>Daniel Miranda Tobar</td>
+       <td>28/06/2021</td>
+       <td>14:30</td>
+       <td>Cita confirmada para nutriólogo</td>
+       <td [routerLink]="['/editar-citas']" routerLinkActive="router-link-active">asignada</td>
+     </tr>
+     <tr class="table-danger">
+       <td>Juan Soto Oyarzo</td>
+        <td>Maximiliano Salinas Cabrera</td>
+        <td>25/06/2021</td>
+        <td>10:30</td>
+        <td>Cancelada debido ha inasistencia del paciente</td>
+       <td>cerrada</td>
+     </tr>
+    </tbody>
+
+    <h6>Solo citas abiertas o asignadas pueden editarse, haciendo click en el estado</h6>
+  </table>
+
+  </div> 
+</div>

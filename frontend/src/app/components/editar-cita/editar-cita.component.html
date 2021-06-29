@@ -1,0 +1,55 @@
+<app-headeradmin></app-headeradmin>
+
+<div class="container my-5">
+  <div class="row my-5 justify-content-center">
+    <div class="col-7">
+      <h3>Editar una Cita Medica</h3>
+      <form class="row g-3">
+        <div class="col-12">
+          <label for="inputRut" class="form-label">Rut Paciente</label>
+          <input type="text" class="form-control" id="inputRut" required placeholder="12345678-k">
+        </div>
+
+        <div class="col-12">
+           <label for="inputFecha" class="form-label">Fecha Tentativa</label><br>
+           <input type="date" class="form-date" required>
+        </div>
+
+        <div class="col-12">
+          <label for="inputHora" class="form-time">Hora Tentativa</label><br>
+          <input type="time" class="form-time" required>
+        </div>
+
+        <div class="col-12">
+          <label for="inputDoctor" class="form-label">Doctor</label>
+
+          <select id="inputDoctor" class="form-select" required>
+            <option value="" selected>Seleccione un Doctor</option>
+            <option *ngFor="let doctor of doctores" [value]="doctor.id">{{doctor.name}} - {{doctor.especialidad}}</option>
+          </select>
+        </div>
+
+        <div class="col-12">
+            <label for="inputEstado" class="form-label">Estado</label>
+            
+            <select id="inputEstado" class="form-select" required>
+              <option value="" selected>Seleccione un Estado</option>
+              <option value="1">Abierto</option>
+              <option value="2">Asignado</option>
+              <option value="3">Cerrado</option>
+            </select>
+        </div>
+
+        <div class="col-12">
+          <label for="inputDescripcion" class="form-label">Motivo de la consulta</label>
+          <textarea class="form-control" id="inputDescripcion" rows="3" required></textarea>
+        </div>
+
+        <div class="col-12">
+          <button type="submit" class="btn btn-primary">Sign in</button>
+        </div>
+
+      </form>
+    </div>
+  </div>    
+</div>
